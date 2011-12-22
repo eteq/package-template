@@ -6,7 +6,7 @@ def primes(imax):
     k = 0
     n = 2
     if imax>10000:
-        imax = 10000
+        raise ValueError('imax in primes can\'t be greater than 10000')
     while len(result) < imax:
         i = 0
         while i < k and n % p[i] != 0:
@@ -54,7 +54,8 @@ def main(args=None):
     prms = do_primes(res.n, res.cy)
     post = time()
     
-    print 'Found',len(prms),'Prime numbers with',prms[-1],'as largest:'
+    col = ':' if res.prnt else ''
+    print 'Found',len(prms),'Prime numbers with',prms[-1],'as largest' + col
     
     if res.time:
         print 'Running time:',post-pre,'s'

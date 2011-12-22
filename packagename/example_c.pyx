@@ -9,7 +9,7 @@ def primes(int imax):
     i = 0
     
     if imax>10000:
-        imax = 10000
+        raise ValueError('imax in primes can\'t be greater than 10000')
     while len(result) < imax:
         i = 0
         while i < k and n % p[i] != 0:
